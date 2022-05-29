@@ -31,3 +31,11 @@ steps:
 - script: cd draw_io_integration/ | ls
   displayName: 'CD e LS do REPO********'
 
+
+- task: CmdLine@2
+  inputs:
+    script: |
+      echo Write your commands here
+      
+      echo Hello world
+
