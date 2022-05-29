@@ -3,6 +3,12 @@
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
 
+resources:
+  repositories:
+  - repository: repo_devops # The name used to reference this repository in the checkout step
+    type: git
+    name: Analytics/sync_github
+    ref: main
 
 trigger:
 - main
@@ -15,5 +21,7 @@ steps:
   displayName: 'Run a one-line script'
 
 - checkout: self
+- checkout: repo_devops
 
 - script: dir $(Build.SourcesDirectory)
+  displayName: 'dir do REPO********'
