@@ -28,9 +28,6 @@ steps:
 - script: dir $(Build.SourcesDirectory)
   displayName: 'dir do REPO********'
 
-- script: cd draw_io_integration/ | ls
-  displayName: 'CD e LS do REPO********'
-
 
 - task: CmdLine@2
   inputs:
