@@ -9,6 +9,8 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
+
+
 steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
@@ -18,8 +20,16 @@ steps:
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
 
-- script: |
-    git remote add --mirror=fetch upstream https://github.com/fmathias/draw_io_integration.git
-    git fetch upstream --tags
-    git push origin --all
-  displayName: 'clona git'
+
+
+resources:
+repositories:
+  - repository: draw_io_integration
+    name: Tools
+    type: git
+
+steps:
+- checkout: self
+- checkout: tools
+- script: dir $(Build.SourcesDirectory)
+
