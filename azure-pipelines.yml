@@ -24,6 +24,6 @@ steps:
 - checkout: repo_devops
 
 - script: dir $(Build.SourcesDirectory)
-- script: cd draw_io_integration.git/
-- script: ls
+  cd draw_io_integration/
+  ls
   displayName: 'dir do REPO********'
