@@ -21,9 +21,11 @@ steps:
   displayName: 'Run a one-line script'
 
 - checkout: self
+  persistCredentials: true
+  
 - checkout: repo_devops
 
 - script: dir $(Build.SourcesDirectory)
-  cd draw_io_integration/
-  ls
+- script: cd draw_io_integration/
+- script: ls
   displayName: 'dir do REPO********'
