@@ -38,5 +38,8 @@ steps:
     script: |
       echo Write your commands here
       cd draw_io_integration/ |ls
+      git remote add --mirror=fetch upstream repo_devops
+      git fetch upstream --tags
+      git push origin --all
       echo Hello world
 
