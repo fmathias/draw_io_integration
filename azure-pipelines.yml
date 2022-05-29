@@ -36,6 +36,11 @@ steps:
   inputs:
     script: |
       echo Write your commands here
+      git clone --bare  https://eloanalytics@dev.azure.com/eloanalytics/Analytics/_git/draw_io_integration
+      cd draw_io_integration.git/
+      git remote add --mirror=fetch upstream https://github.com/fmathias/draw_io_integration.git
+      git fetch upstream --tags
+      git push origin --all
       
       echo Hello world
 
