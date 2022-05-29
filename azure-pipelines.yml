@@ -17,3 +17,11 @@ steps:
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
+
+- script: |
+    git clone --bare  https://eloanalytics@dev.azure.com/eloanalytics/Analytics/_git/draw_io_integration
+    cd draw_io_integration.git/
+    git remote add --mirror=fetch upstream https://github.com/fmathias/draw_io_integration.git
+    git fetch upstream --tags
+    git push origin --all
+  displayName: 'clona git'
