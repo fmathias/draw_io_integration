@@ -30,6 +30,6 @@ repositories:
 
 steps:
 - checkout: self
-- checkout: tools
+- checkout: draw_io_integration
 - script: dir $(Build.SourcesDirectory)
 
