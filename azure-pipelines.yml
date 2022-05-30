@@ -7,7 +7,7 @@
 
 resources:
   repositories:
-  - repository: repo_devops 
+  - repository: repo_devops # The name used to reference this repository in the checkout step
     type: git
     name: Analytics/sync_github
     ref: main
@@ -18,10 +18,14 @@ trigger:
 pool:
   vmImage: 'ubuntu-latest'
 
+steps:
+- script: echo Hello, world!
+  displayName: 'Run a one-line script'
+
 - checkout: self
   persistCredentials: true
   
-- checkout: repo_devops  
+- checkout: repo_devops
 
 - script: dir $(Build.SourcesDirectory)
   displayName: 'dir do REPO********'
